@@ -47,7 +47,7 @@ geo_encoded_df = pd.DataFrame(geo_encoded, columns=onehot_encoder.get_feature_na
 input_df = pd.concat([input_data.reset_index(drop=True), geo_encoded_df], axis=1)
 scaled_input = scaler.transform(input_df)
 
-prediction = model.predict(input_data_scaled)
+prediction = model.predict(scaled_input)
 prediction_proba = prediction[0][0]
 
 st.write(f'Churn Probability: {prediction_proba:.2f}')
@@ -56,5 +56,6 @@ if prediction_proba > 0.5:
     st.write('The customer is likely to churn.')
 else:
     st.write('The customer is not likely to churn.')
+
 
 
