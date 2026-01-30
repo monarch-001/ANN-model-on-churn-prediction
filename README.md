@@ -19,7 +19,6 @@ A simple Artificial Neural Network (ANN) for customer churn prediction. This rep
 - Repository structure
 - Configuration & hyperparameters
 - Acknowledgements
-- Contributing
 - License
 - Contact
 
