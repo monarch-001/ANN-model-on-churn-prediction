@@ -8,7 +8,7 @@ import pickle
 
 model = tf.keras.models.load_model('salary_prediction_model.h5')
 
-with open('scaler.pkl', 'rb') as f:
+with open('scaler_regression.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
 with open('label_encoder_gender.pkl', 'rb') as f:
@@ -54,5 +54,6 @@ prediction = model.predict(input_data_scaled)
 predicted_salary = prediction[0][0]
 
 st.subheader(f'Predicted Salary: ${predicted_salary:,.2f}')
+
 
 
