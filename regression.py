@@ -48,17 +48,13 @@ geo_encoded = one_hot_encoder.transform([[geography]])
 
 # Convert sparse matrix to dense array and create DataFrame
 geo_encoded_df = pd.DataFrame(
-    geo_encoded, 
+    geo_encoded.toarray(), 
     columns=one_hot_encoder.get_feature_names_out(['Geography'])
 )
 
 # Combine inputs with encoded geography
 input_data = pd.concat([input_data, geo_encoded_df], axis=1)
 
-# --- CRITICAL FIXES ---
-# 1. Drop 'Geography_France' if it exists, because the scaler was likely trained with drop='first'
-if 'Geography_France' in input_data.columns:
-    input_data = input_data.drop('Geography_France', axis=1)
 
 # 2. Reorder columns to match exactly what the scaler expects
 input_data = input_data[scaler.feature_names_in_]
@@ -72,4 +68,3 @@ prediction = model.predict(input_data_scaled)
 predicted_salary = prediction[0][0]
 
 st.subheader(f'Predicted Salary: ${predicted_salary:,.2f}')
-
