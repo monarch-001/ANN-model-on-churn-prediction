@@ -5,6 +5,7 @@ scikit-learn
 tensorboard
 matplotlib
 streamlit==1.35.0
-protobuf
+protobuf==3.20.3
+
 
 
