@@ -48,12 +48,13 @@ geo_encoded_df = pd.DataFrame(
 
 input_data = pd.concat([input_data, geo_encoded_df], axis=1)
 
-input_data_scaled = scaler.transform(input_data)
+input_data_scaled = scaler_regression.transform(input_data)
 
 prediction = model.predict(input_data_scaled)
 predicted_salary = prediction[0][0]
 
 st.subheader(f'Predicted Salary: ${predicted_salary:,.2f}')
+
 
 
 
