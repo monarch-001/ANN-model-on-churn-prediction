@@ -42,7 +42,7 @@ input_data = pd.DataFrame({
 geo_encoded = one_hot_encoder.transform([[geography]])
 
 geo_encoded_df = pd.DataFrame(
-    geo_encoded,
+    geo_encoded.toarray(),
     columns=one_hot_encoder.get_feature_names_out(['Geography'])
 )
 
@@ -54,4 +54,5 @@ prediction = model.predict(input_data_scaled)
 predicted_salary = prediction[0][0]
 
 st.subheader(f'Predicted Salary: ${predicted_salary:,.2f}')
+
 
