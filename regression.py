@@ -14,7 +14,7 @@ with open('scaler_regression.pkl', 'rb') as f:
 with open('label_encoder_gender.pkl', 'rb') as f:
     label_encoder_gender = pickle.load(f)
 
-with open('onehot_geo.pkl', 'rb') as f:
+with open('one_hot_geo.pkl', 'rb') as f:
     one_hot_encoder = pickle.load(f)
 
 st.title("Salary Prediction App")
@@ -54,6 +54,7 @@ prediction = model.predict(input_data_scaled)
 predicted_salary = prediction[0][0]
 
 st.subheader(f'Predicted Salary: ${predicted_salary:,.2f}')
+
 
 
 
