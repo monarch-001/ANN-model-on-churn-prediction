@@ -135,13 +135,7 @@ This project was built following Krish Naik's churn prediction tutorial (inspira
 
 If you based code on a specific repository or copied files, please add a proper notice and the original license here.
 
-## Contributing
-Contributions are welcome but optional. Minimal guidance:
-- Open an issue to discuss major changes.
-- Create a branch `feat/xxx` or `fix/xxx`, make changes, and open a pull request.
-- Keep changes focused and include short descriptions of any model/data changes.
 
-If you prefer not to accept outside contributions, you can remove this section.
 
 ## License
 Add a LICENSE file to the repository. Example: MIT License.
